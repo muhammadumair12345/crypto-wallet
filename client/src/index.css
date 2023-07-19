@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: rgb(140,65,192);
+    background: linear-gradient(90deg, rgba(140,65,192,1) 25%, rgba(180,54,233,1) 76%, rgba(75,149,227,1) 100%);
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 2rem;
+    color:#fff;
+    overflow-x: hidden;
+}
+
+.bg-gradient{
+    background: rgb(140,65,192);
+    background: linear-gradient(90deg, rgba(140,65,192,1) 25%, rgba(180,54,233,1) 76%, rgba(75,149,227,1) 100%);
+}
