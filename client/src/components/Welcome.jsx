@@ -2,7 +2,7 @@ import { FaEthereum, FaInfoCircle } from "react-icons/fa";
 
 const Welcome = () => {
   return (
-    <section className="py-24 flex gap-6 items-start flex-col md:flex-row justify-between">
+    <section className="py-12 flex gap-6 items-center flex-col md:flex-row justify-between">
       <div>
         <div>
           <h1 className="text-6xl mb-4">
