@@ -26,7 +26,7 @@ const Services = () => (
         Services that we
         <br /> continue to improve
       </h1>
-      <p className="mb-8 font-normal text-xl md:text-2xl">
+      <p className="mb-8 text-xl md:text-2xl">
         The best choice for buying and selling your crypto assets, with the
         various super friendly services we offer
       </p>

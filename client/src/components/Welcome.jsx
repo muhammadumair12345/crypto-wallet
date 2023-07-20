@@ -8,10 +8,13 @@ const Welcome = () => {
           <h1 className="text-4xl md:text-6xl mb-4">
             Send Crypto <br /> Across the world
           </h1>
-          <p className="mb-8 font-normal text-xl md:text-2xl">
+          <p className="mb-4  text-xl md:text-2xl">
             Explore the crypto world. Buy and sell cryptocurrencies easily on
             Crypto.
           </p>
+          <button className="mb-8 bg-primary w-full text-lg font-medium text-center rounded-full hover:bg-secondary p-3">
+            Connect Wallet
+          </button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3">
           {[
