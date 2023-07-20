@@ -22,11 +22,11 @@ const ServiceCard = (prop) => {
 const Services = () => (
   <div className="flex flex-col py-12 md:flex-row justify-between items-center">
     <div>
-      <h1 className="text-6xl mb-4">
+      <h1 className="text-4xl md:text-6xl mb-4">
         Services that we
         <br /> continue to improve
       </h1>
-      <p className="mb-8 font-normal text-2xl">
+      <p className="mb-8 font-normal text-xl md:text-2xl">
         The best choice for buying and selling your crypto assets, with the
         various super friendly services we offer
       </p>

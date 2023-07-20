@@ -5,10 +5,10 @@ const Welcome = () => {
     <section className="py-12 flex gap-6 items-center flex-col md:flex-row justify-between">
       <div>
         <div>
-          <h1 className="text-6xl mb-4">
+          <h1 className="text-4xl md:text-6xl mb-4">
             Send Crypto <br /> Across the world
           </h1>
-          <p className="mb-8 font-normal text-2xl">
+          <p className="mb-8 font-normal text-xl md:text-2xl">
             Explore the crypto world. Buy and sell cryptocurrencies easily on
             Crypto.
           </p>
