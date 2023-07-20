@@ -20,13 +20,15 @@ const Footer = () => (
       <p className="text-sm text-center">
         Come join us and hear for the unexpected miracle
       </p>
-      <p className="text-sm text-center font-medium mt-2">info@crypto.com</p>
+      <p className="text-sm text-center font-medium mt-2">
+        info@cryptowallet.com
+      </p>
     </div>
 
     <div className="w-full h-[0.25px] bg-primary" />
 
     <div className="flex justify-between items-center">
-      <p className="text-xs">@Crypto2022</p>
+      <p className="text-xs">@CryptoWallet2022</p>
       <p className="text-xs">All rights reserved</p>
     </div>
   </div>
