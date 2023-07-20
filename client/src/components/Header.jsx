@@ -24,18 +24,11 @@ const Header = () => {
               </button>
             </li>
           )}
-          <li>
-            <a href="#">Market</a>
-          </li>
-          <li>
-            <a href="#">Exchange</a>
-          </li>
-          <li>
-            <a href="#">Tutorials</a>
-          </li>
-          <li>
-            <a href="#">Wallets</a>
-          </li>
+          {["Market", "Exchange", "Tutorials", "Wallets"].map((menu, index) => (
+            <li key={index}>
+              <a href="#">{menu}</a>
+            </li>
+          ))}
           <li>
             <button className="bg-primary w-full md:w-[7rem] text-center rounded-full hover:bg-secondary p-2">
               Login
