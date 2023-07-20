@@ -12,7 +12,7 @@ const Welcome = () => {
             Explore the crypto world. Buy and sell cryptocurrencies easily on
             Crypto.
           </p>
-          <button className="mb-8 bg-primary w-full text-lg font-medium text-center rounded-full hover:bg-secondary p-3">
+          <button className="mb-8 bg-primary w-full text-lg font-medium text-center rounded-full hover:bg-secondary p-2 md:p-3">
             Connect Wallet
           </button>
         </div>

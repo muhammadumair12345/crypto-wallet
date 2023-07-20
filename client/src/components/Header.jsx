@@ -6,7 +6,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   const menuStyle = toggle
-    ? "md:hidden flex-col fixed z-10 -top-0 -right-2 bg-dark h-screen py-4 px-8 gap-6 w-[60vw] opacity-[0.5] shadow-2xl rounded-md ease-in-out duration-300"
+    ? "md:hidden flex-col fixed z-10 -top-0 -right-2 bg-dark h-screen py-4 px-8 gap-6 w-[60vw] opacity-[0.9] shadow-2xl rounded-md ease-in-out duration-300"
     : "hidden md:flex items-center gap-6";
 
   return (
