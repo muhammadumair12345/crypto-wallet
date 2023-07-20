@@ -8,6 +8,8 @@ export default {
       secondary: "#b436e9",
       dark: "#222222",
       light: "#F9FAFB",
+      gradient:
+        "linear-gradient(90deg, rgba(140,65,192,1) 25%, rgba(180,54,233,1) 76%, rgba(75,149,227,1) 100%);",
     },
     screens: {
       sm: "640px",

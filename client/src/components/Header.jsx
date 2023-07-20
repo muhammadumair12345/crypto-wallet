@@ -10,34 +10,38 @@ const Header = () => {
     : "hidden md:flex items-center gap-6";
 
   return (
-    <header className="flex relative gap-6 justify-between items-center container lg:w-[80%]  m-auto py-4 font-medium text-xl">
-      <a href="#" className="flex gap-2 items-center">
-        <img src={logo} alt="" />
-        <p className="text-3xl">Crypto</p>
-      </a>
-      <div className="flex items-center gap-6">
-        <ul className={`flex ${menuStyle}`}>
-          {toggle && (
-            <li className="self-end">
-              <button onClick={() => setToggle(false)}>
-                <FaTimes fontSize="30px" />
+    <header className="sticky top-0 bg-gradient">
+      <div className="container mx-auto lg:w-[80%] px-8 flex gap-6 justify-between items-center py-4 font-medium text-xl">
+        <a href="#" className="flex gap-2 items-center">
+          <img src={logo} alt="" />
+          <p className="text-3xl">Crypto</p>
+        </a>
+        <div className="flex items-center gap-6">
+          <ul className={`flex ${menuStyle}`}>
+            {toggle && (
+              <li className="self-end">
+                <button onClick={() => setToggle(false)}>
+                  <FaTimes fontSize="30px" />
+                </button>
+              </li>
+            )}
+            {["Market", "Exchange", "Tutorials", "Wallets"].map(
+              (menu, index) => (
+                <li key={index}>
+                  <a href="#">{menu}</a>
+                </li>
+              )
+            )}
+            <li>
+              <button className="bg-primary w-full md:w-[7rem] text-center rounded-full hover:bg-secondary p-2">
+                Login
               </button>
             </li>
-          )}
-          {["Market", "Exchange", "Tutorials", "Wallets"].map((menu, index) => (
-            <li key={index}>
-              <a href="#">{menu}</a>
-            </li>
-          ))}
-          <li>
-            <button className="bg-primary w-full md:w-[7rem] text-center rounded-full hover:bg-secondary p-2">
-              Login
-            </button>
-          </li>
-        </ul>
-        <button className="block md:hidden" onClick={() => setToggle(true)}>
-          {!toggle && <FaBars fontSize="30px" />}
-        </button>
+          </ul>
+          <button className="block md:hidden" onClick={() => setToggle(true)}>
+            {!toggle && <FaBars fontSize="30px" />}
+          </button>
+        </div>
       </div>
     </header>
   );

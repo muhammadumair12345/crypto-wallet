@@ -1,10 +1,16 @@
+import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
+import Welcome from "./components/Welcome.jsx";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <div className="container mx-auto lg:w-[80%] px-8">
+        <Welcome />
+        <Footer />
+      </div>
+    </>
   );
 };
 
