@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaEthereum, FaInfoCircle } from "react-icons/fa";
 import { TransactionContext } from "../context/TransactionContext";
+import Loader from "./Loader";
 
 const Welcome = () => {
   const {
@@ -9,6 +10,7 @@ const Welcome = () => {
     formData,
     sendTransaction,
     handleChange,
+    isLoading,
   } = useContext(TransactionContext);
 
   const handleSubmit = (e) => {
@@ -110,12 +112,16 @@ const Welcome = () => {
             name="message"
             placeholder="Enter Message"
           />
-          <button
-            type="submit"
-            className="p-2 bg-gradient rounded-full cursor-pointer"
-          >
-            Send now
-          </button>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <button
+              type="submit"
+              className="p-2 bg-gradient rounded-full cursor-pointer"
+            >
+              Send now
+            </button>
+          )}
         </form>
       </div>
     </section>
