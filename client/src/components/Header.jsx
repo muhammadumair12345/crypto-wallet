@@ -13,7 +13,7 @@ const Header = () => {
     <header className="sticky top-0 bg-gradient">
       <div className="container mx-auto lg:w-[80%] px-8 flex gap-6 justify-between items-center py-4 font-medium text-lg">
         <a href="#" className="flex gap-2 items-center">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="w-16 h-16" />
           <p className="text-xl md:text-2xl">Crypto Wallet</p>
         </a>
         <div className="flex items-center gap-6">
