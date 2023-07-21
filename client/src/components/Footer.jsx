@@ -2,19 +2,17 @@ import logo from "../assets/logo.png";
 
 const Footer = () => (
   <div className="flex flex-col py-4 gap-6 font-medium text-lg">
-    <div className="flex gap-6 justify-between items-center">
+    <div className="flex flex-col md:flex-row gap-6 justify-between items-center">
       <a href="#">
-        <img src={logo} alt="" className="w-24" />
+        <img src={logo} alt="" className="w-20 h-20 md:w-24 md:h-24" />
       </a>
-      <div className="flex items-center gap-6">
-        <ul className={`flex gap-6`}>
-          {["Market", "Exchange", "Tutorials", "Wallets"].map((menu, index) => (
-            <li key={index}>
-              <a href="#">{menu}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className={`grid grid-cols-2 md:grid-cols-4 gap-6`}>
+        {["Market", "Exchange", "Tutorials", "Wallets"].map((menu, index) => (
+          <li key={index} className="hover:text-primary">
+            <a href="#">{menu}</a>
+          </li>
+        ))}
+      </ul>
     </div>
     <div>
       <p className="text-sm text-center">
