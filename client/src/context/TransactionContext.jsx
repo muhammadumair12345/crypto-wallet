@@ -8,15 +8,20 @@ export const TransactionContext = createContext();
 
 const { ethereum } = window;
 
-const createEthereumContract = () => {
-  const provider = new ethers.BrowserProvider(ethereum);
-  const signer = provider.getSigner();
-  const transactionsContract = new ethers.Contract(
-    contractAddress,
-    contractABI,
-    signer
-  );
-  return transactionsContract;
+const createEthereumContract = async () => {
+  try {
+    const provider = new ethers.BrowserProvider(ethereum);
+    const signer = await provider.getSigner();
+    const transactionsContract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer
+    );
+
+    return transactionsContract;
+  } catch (error) {
+    console.log(error);
+  }
 };
 export const TransactionProvider = (prop) => {
   const { children } = prop;
@@ -69,9 +74,8 @@ export const TransactionProvider = (prop) => {
     try {
       if (ethereum) {
         const { addressTo, amount, keyword, message } = formData;
-        const transactionsContract = createEthereumContract();
+        const transactionsContract = await createEthereumContract();
         const parsedAmount = ethers.parseEther(amount);
-
         await ethereum.request({
           method: "eth_sendTransaction",
           params: [
@@ -83,23 +87,17 @@ export const TransactionProvider = (prop) => {
             },
           ],
         });
-
-        const transactionHash = await transactionsContract.addToBlockchain(
-          addressTo,
-          parsedAmount,
-          message,
-          keyword
-        );
-
+        const transactionHash = await await transactionsContract
+          .getFunction("addToBlockchain")
+          .call(this, addressTo, parsedAmount, message, keyword);
+        console.log(transactionHash);
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
         await transactionHash.wait();
         console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
-
         const transactionsCount =
           await transactionsContract.getTransactionCount();
-
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
