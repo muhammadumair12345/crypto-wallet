@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaEthereum, FaInfoCircle } from "react-icons/fa";
 import { TransactionContext } from "../context/TransactionContext";
+import { shortenAddress } from "../utils/shortenAddress";
 import Loader from "./Loader";
 
 const Welcome = () => {
@@ -74,7 +75,9 @@ const Welcome = () => {
             <FaInfoCircle fontSize="1.5rem" />
           </div>
           <div>
-            <h5 className="font-light text-sm mb-1">0x9xff32323</h5>
+            <h5 className="font-light text-sm mb-1">
+              {currentAccount ? shortenAddress(currentAccount) : "..."}
+            </h5>
             <h2 className="font-semibold text-lg">Etherium</h2>
           </div>
         </div>

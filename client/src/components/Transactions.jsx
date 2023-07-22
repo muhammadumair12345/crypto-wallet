@@ -1,8 +1,13 @@
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
+import { TransactionContext } from "../context/TransactionContext";
+import useFetch from "../hooks/useFetch";
+import { useContext } from "react";
 
 const TransactionsCard = (prop) => {
-  const { addressTo, addressFrom, timestamp, message, amount, url } = prop;
+  const { addressTo, addressFrom, timestamp, message, amount, keyword, url } =
+    prop;
+  const gifUrl = useFetch({ keyword });
 
   return (
     <div className="flex flex-col gap-6 p-6 shadow-md rounded-2xl border-[0.5px] border-secondary">
@@ -30,7 +35,7 @@ const TransactionsCard = (prop) => {
         )}
       </div>
       <img
-        src={url}
+        src={gifUrl || url}
         alt="nature"
         className="w-full h-64 rounded-md object-cover"
       />
@@ -40,7 +45,8 @@ const TransactionsCard = (prop) => {
 };
 
 const Transactions = () => {
-  const currentAccount = false;
+  const { transactions, currentAccount } = useContext(TransactionContext);
+
   return (
     <div className="py-12 flex flex-col gap-6">
       {currentAccount ? (
@@ -52,7 +58,7 @@ const Transactions = () => {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
-        {dummyData.reverse().map((transaction, i) => (
+        {[...dummyData, ...transactions].reverse().map((transaction, i) => (
           <TransactionsCard key={i} {...transaction} />
         ))}
       </div>
