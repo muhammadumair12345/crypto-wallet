@@ -8,7 +8,7 @@ const Footer = () => (
       </a>
       <ul className={`grid grid-cols-2 md:grid-cols-4 gap-6`}>
         {["Market", "Exchange", "Tutorials", "Wallets"].map((menu, index) => (
-          <li key={index} className="hover:text-primary">
+          <li key={index} className="hover:text-[#8419b1]">
             <a href="#">{menu}</a>
           </li>
         ))}

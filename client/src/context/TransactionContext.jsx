@@ -90,15 +90,15 @@ export const TransactionProvider = (prop) => {
         const transactionHash = await await transactionsContract
           .getFunction("addToBlockchain")
           .call(this, addressTo, parsedAmount, message, keyword);
-        console.log(transactionHash);
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
         await transactionHash.wait();
         console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
-        const transactionsCount =
-          await transactionsContract.getTransactionCount();
-        setTransactionCount(transactionsCount.toNumber());
+        const transactionsCount = await transactionsContract
+          .getFunction("getTransactionCount")
+          .call(this);
+        setTransactionCount(transactionsCount);
         window.location.reload();
       } else {
         console.log("No ethereum object");
@@ -108,6 +108,8 @@ export const TransactionProvider = (prop) => {
       throw new Error("No ethereum object.");
     }
   };
+
+  console.log(transactionCount);
 
   useEffect(() => {
     checkIfWalletIsConnected();

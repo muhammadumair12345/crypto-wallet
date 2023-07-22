@@ -27,7 +27,7 @@ const Header = () => {
             )}
             {["Market", "Exchange", "Tutorials", "Wallets"].map(
               (menu, index) => (
-                <li key={index} className="hover:text-primary">
+                <li key={index} className="hover:text-[#8419b1]">
                   <a href="#">{menu}</a>
                 </li>
               )
