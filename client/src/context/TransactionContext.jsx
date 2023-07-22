@@ -9,14 +9,13 @@ export const TransactionContext = createContext();
 const { ethereum } = window;
 
 const createEthereumContract = () => {
-  const provider = new ethers.providers.Web3Provider(ethereum);
+  const provider = new ethers.BrowserProvider(ethereum);
   const signer = provider.getSigner();
   const transactionsContract = new ethers.Contract(
     contractAddress,
     contractABI,
     signer
   );
-
   return transactionsContract;
 };
 export const TransactionProvider = (prop) => {
@@ -37,6 +36,7 @@ export const TransactionProvider = (prop) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
   const checkIfWalletIsConnected = async () => {
     try {
       if (!ethereum) return alert("Please install metamask");
@@ -70,7 +70,7 @@ export const TransactionProvider = (prop) => {
       if (ethereum) {
         const { addressTo, amount, keyword, message } = formData;
         const transactionsContract = createEthereumContract();
-        const parsedAmount = ethers.utils.parseEther(amount);
+        const parsedAmount = ethers.parseEther(amount);
 
         await ethereum.request({
           method: "eth_sendTransaction",
@@ -78,7 +78,7 @@ export const TransactionProvider = (prop) => {
             {
               from: currentAccount,
               to: addressTo,
-              gas: "0x5208",
+              gas: "0x7A120",
               value: parsedAmount._hex,
             },
           ],

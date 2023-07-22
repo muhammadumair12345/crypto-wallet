@@ -16,8 +16,6 @@ const Welcome = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { addressTo, amount, keyword, message } = formData;
-
-    console.log(formData);
     if (!addressTo || !amount || !keyword || !message) return;
     sendTransaction();
   };
@@ -93,7 +91,7 @@ const Welcome = () => {
           />
           <input
             className="rounded-sm p-2 outline-none bg-transparent text-dark border-none text-sm"
-            type="number"
+            type="text"
             onChange={handleChange}
             name="amount"
             placeholder="Amount (ETH)"
@@ -117,7 +115,7 @@ const Welcome = () => {
           ) : (
             <button
               type="submit"
-              className="p-2 bg-gradient rounded-full cursor-pointer"
+              className="p-2 hover:bg-primary shadow-sm hover:border-0 bg-secondary border-[1px] rounded-full cursor-pointer"
             >
               Send now
             </button>
