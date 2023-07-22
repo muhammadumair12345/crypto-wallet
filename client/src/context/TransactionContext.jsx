@@ -160,6 +160,7 @@ export const TransactionProvider = (prop) => {
           keyword: "",
           message: "",
         });
+        getAllTransactions();
       } else {
         console.log("No ethereum object");
       }
