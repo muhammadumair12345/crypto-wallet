@@ -91,9 +91,10 @@ const Welcome = () => {
           />
           <input
             className="rounded-sm p-2 outline-none bg-transparent text-dark border-none text-sm"
-            type="text"
+            type="number"
             onChange={handleChange}
             name="amount"
+            step="any"
             placeholder="Amount (ETH)"
           />
           <input
@@ -115,7 +116,7 @@ const Welcome = () => {
           ) : (
             <button
               type="submit"
-              className="p-2 hover:bg-primary shadow-sm hover:border-0 bg-secondary border-[1px] rounded-full cursor-pointer"
+              className="p-2 hover:bg-[#aa1ee5eb] shadow-sm  bg-secondary border-[1px] rounded-full cursor-pointer"
             >
               Send now
             </button>

@@ -79,7 +79,7 @@ export const TransactionProvider = (prop) => {
               from: currentAccount,
               to: addressTo,
               gas: "0x7A120",
-              value: parsedAmount._hex,
+              value: `0x${parsedAmount.toString(16)}`,
             },
           ],
         });
